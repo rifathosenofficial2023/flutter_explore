@@ -7,30 +7,48 @@ class Screen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: Column(
+        child: ListView(
           children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               margin: EdgeInsets.zero,
               child: Column(
-               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(500),
-                  child: Image.network("https://picsum.photos/200", height: 100, errorBuilder: (_,__,___){
-                    return Icon(Icons.image, size: 50,);
-                  },),
-                ),
-                Text("Random Image Profile")
-              ],
-            ))
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(500),
+                    child: Image.network(
+                      "https://picsum.photos/200",
+                      height: 100,
+                      errorBuilder: (_, __, ___) {
+                        return Icon(Icons.image, size: 50);
+                      },
+                    ),
+                  ),
+                  Text("Random Image Profile"),
+                  Text("Random@gmail.com"),
+                ],
+              ),
+            ),
+              Column(
+                children: [
+                  ListTile(
+                    tileColor: Colors.amber,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    leading: Icon(Icons.home),
+                    title: Text("Home"),
+                    subtitle: Text("School"),
+                    trailing: Icon(Icons.arrow_forward_ios_rounded),
+                  )
+                ],
+              )
           ],
         ),
       ),
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-      ),
-       body: Column(
-        mainAxisAlignment:MainAxisAlignment.center,
+      appBar: AppBar(backgroundColor: Colors.blue),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
@@ -39,14 +57,14 @@ class Screen2 extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepPurple,
-                foregroundColor: Colors.white
+                foregroundColor: Colors.white,
               ),
-              onPressed: (){}, 
-              child: const Text("Button")),
-          )
+              onPressed: () {},
+              child: const Text("Button"),
+            ),
+          ),
         ],
-
-       ),
+      ),
     );
   }
 }
