@@ -40,7 +40,7 @@ class Screen2 extends StatelessWidget {
                     title: Text("Home"),
                     subtitle: Text("School"),
                     trailing: Icon(Icons.arrow_forward_ios_rounded),
-                  )
+                  )  
                 ],
               )
           ],
@@ -63,8 +63,30 @@ class Screen2 extends StatelessWidget {
               child: const Text("Button"),
             ),
           ),
+
+          OutlinedButton(onPressed: (){
+            Dialogbox(context);
+          }, child: Text("outline"))
         ],
       ),
     );
+  }
+  
+  Dialogbox(BuildContext context){
+    showDialog(context: context, builder: (context){
+      return AlertDialog(
+        title: Text("data"),
+        content: Text("he"),
+        actions: [
+           OutlinedButton(onPressed: (){
+            Navigator.pop(context);
+          }, child: Text("Yes")),
+          OutlinedButton(onPressed: (){
+            Navigator.pop(context);
+          
+          }, child: Text("No"))
+        ],
+      );
+    });
   }
 }
