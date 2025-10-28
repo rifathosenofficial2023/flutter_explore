@@ -9,6 +9,7 @@ class Screen2 extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
+            Text("data"),
             DrawerHeader(
               padding: EdgeInsets.zero,
               margin: EdgeInsets.zero,
