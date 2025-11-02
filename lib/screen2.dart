@@ -85,7 +85,7 @@ class Screen2 extends StatelessWidget {
           OutlinedButton(onPressed: (){
             Navigator.pop(context);
           
-          }, child: Text("No"))
+          }, child: Text("No NO"))
         ],
       );
     });
