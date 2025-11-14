@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_day_01/screen2.dart';
+import 'package:flutter_day_01/views/login_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,29 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Day o1',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.red,
       ),
-      home: Screen2(),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.amber
+      ),
+      themeMode: ThemeMode.light,
+      title: 'THis is title',
+      color: Colors.red,
+      home: LoginScreen(),
     );
   }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: const Text("flutter explore"),
-
-      ),
-      body: Center(
-        child: Text("hw are you?"),
-      ),
-    );
-  }  
 }
