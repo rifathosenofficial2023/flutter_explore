@@ -28,6 +28,18 @@ class _LoginScreenState extends State<LoginScreen> {
         shadowColor: Colors.amber,
         
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){},
+      elevation: 0,
+      backgroundColor: Colors.blue,
+      tooltip: 'Open Camera',
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: const Icon(
+        Icons.camera_alt_rounded,
+        color: Colors.white,
+      ),
+      ),
     );
   }
 }
