@@ -20,8 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
         title: const Text("learn everything"),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt_rounded)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.notifications)),
           IconButton(onPressed: (){}, icon: Icon(Icons.more_vert))
         ],
         elevation: 0,
@@ -39,6 +37,20 @@ class _LoginScreenState extends State<LoginScreen> {
         Icons.camera_alt_rounded,
         color: Colors.white,
       ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
+      ],
+      backgroundColor: Colors.blue,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white.withOpacity(.5),
+      currentIndex: 0,
+      onTap:(index) {
+        print("You have clicked on $index");
+      },
       ),
     );
   }
