@@ -8,15 +8,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white, 
         leading: IconButton(onPressed: (){
-
-        }, icon: Icon(Icons.menu)),
+          scaffoldKey.currentState!.openDrawer();
+        }, icon: Icon(Icons.account_circle)),
         title: const Text("learn everything"),
         centerTitle: true,
         actions: [
@@ -51,6 +54,24 @@ class _LoginScreenState extends State<LoginScreen> {
       onTap:(index) {
         print("You have clicked on $index");
       },
+      ),
+      drawer:const Drawer(
+        child: SafeArea(
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DrawerHeader(child: Text('Rifat Hosen')),
+            Text('Home'),
+            Text("Login"),
+            Text('Logout')
+          ],
+        )
+        ),
+      ),
+      endDrawer: Drawer(
+        child: Center(
+          child: Text('Iam end drawer'),
+        ),
       ),
     );
   }
