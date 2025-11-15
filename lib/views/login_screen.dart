@@ -8,7 +8,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  int currentIndex = 0;
+  bool switchState = false;
+  bool checkState = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +34,27 @@ class _LoginScreenState extends State<LoginScreen> {
         shadowColor: Colors.amber,
         
       ),
+      body: Column(
+        children: [
+          Switch(
+            value: switchState,
+             onChanged: (value) {
+            print(switchState);
+            setState(() {
+              switchState = !switchState;
+            });
+            
+          },),
+          Tooltip(
+            message: "rifat",
+            child: Checkbox(value: checkState, onChanged: (value) {
+              setState(() {
+                checkState = !checkState;
+              });
+            },),
+          )
+        ],
+      ),
       floatingActionButton: FloatingActionButton(onPressed: (){},
       elevation: 0,
       backgroundColor: Colors.blue,
@@ -46,13 +72,17 @@ class _LoginScreenState extends State<LoginScreen> {
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
+        BottomNavigationBarItem(icon: Icon(Icons.message),label: 'Message'),
       ],
       backgroundColor: Colors.blue,
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white.withOpacity(.5),
-      currentIndex: 0,
+      currentIndex: currentIndex,
       onTap:(index) {
-        print("You have clicked on $index");
+        setState(() {
+              print("You have clicked on $index");
+              currentIndex = index;
+        });
       },
       ),
       drawer:const Drawer(

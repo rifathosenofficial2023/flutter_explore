@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       title: 'THis is title',
       color: Colors.red,
-      home: Statefullexample(),
+      home: LoginScreen(),
     );
   }
 }
