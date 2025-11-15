@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_day_01/views/login_screen.dart';
+import 'package:flutter_day_01/views/stateFullExample.dart';
 
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       title: 'THis is title',
       color: Colors.red,
-      home: LoginScreen(),
+      home: Statefullexample(),
     );
   }
 }
