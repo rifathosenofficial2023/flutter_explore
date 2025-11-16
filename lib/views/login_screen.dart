@@ -52,7 +52,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 checkState = !checkState;
               });
             },),
-          )
+          ),
+          IconButton(onPressed: (){}, icon: Icon(Icons.add_circle))
         ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){},
